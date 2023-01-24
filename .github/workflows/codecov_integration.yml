@@ -32,8 +32,14 @@ jobs:
       - name: Build App
         run: ./gradlew assembleDebug
 
-      - name: Run Tests
+      - name: Run Unit Tests
         run: ./gradlew jacocoTestReport
+
+      - name: run tests
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 29
+          script: ./gradlew connectedCheck
 
       - name: Upload Test Coverage
         uses: codecov/codecov-action@v1.5.2
