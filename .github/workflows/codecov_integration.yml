@@ -1,0 +1,41 @@
+# Copyright Tandem Diabetes Care, Inc. 2023. All rights reserved.
+# Github Action for whenever a PR is created
+# codecov_integration.yml
+# @author Andy Lux
+
+# Using this for testing the CodeCov integration
+
+ name: Codecov Integation
+
+ on:
+   push:
+     branches:
+       - actions/*
+
+ jobs:
+   verify_test_compile:
+     runs-on: ubuntu-latest
+     steps:
+       - name: Step 1 - Verify Test & Compile
+         uses: actions/checkout@v3
+
+       - name: Setup JDK 11
+         uses: actions/setup-java@v2
+         with:
+           distribution: "zulu"
+           java-version: 11
+
+       - name: Setup Android SDK
+         uses: android-actions/setup-android@v2
+
+       - name: Build App
+         run: ./gradlew assembleDebug
+
+
+
+#       - name: Step 2 - Upload coverage to Codecov
+#         uses: codecov/codecov-action@v1.5.2
+#         with:
+#           token: ${{ secrets.CODECOV_TOKEN }}
+#           fail_ci_if_error: true
+#           verbose: true
