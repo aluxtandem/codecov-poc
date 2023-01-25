@@ -1,0 +1,23 @@
+# Copyright Tandem Diabetes Care, Inc. 2023. All rights reserved.
+# Github Action for whenever a PR is created
+# codecov.yml
+# @author alux Jan 25, 2023
+
+# Used by Codecov
+# Establishes our Codecov rules
+coverage:
+  status:
+    project:
+      default:
+        informational: true
+    patch:
+      default:
+        informational: true
+
+flags:
+  mobilebolus:
+    paths:
+      - app/src/main/java/com/tandemdiabetes/codecovpoc/mobilebolus
+  fullcontrol:
+    paths:
+      - app/src/main/java/com/tandemdiabetes/codecovpoc/fullcontrol

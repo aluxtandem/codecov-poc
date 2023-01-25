@@ -1,5 +1,7 @@
 package com.tandemdiabetes.codecovpoc
 
+import com.tandemdiabetes.codecovpoc.fullcontrol.FullControlUtility
+import com.tandemdiabetes.codecovpoc.mobilebolus.MobilebolusUtility
 import org.junit.Test
 
 import org.junit.Assert.*
@@ -19,5 +21,17 @@ class ExampleUnitTest {
     fun testAddition() {
         val util = Utility()
         assertEquals(4, util.add(3, 1))
+    }
+
+    @Test
+    fun testFCAddition() {
+        val util = FullControlUtility()
+        assertEquals(4, util.addFcNumbers(3, 1))
+    }
+
+    @Test
+    fun testMbAddition() {
+        val util = MobilebolusUtility()
+        assertEquals(4, util.addMbNumbers(3, 1))
     }
 }
