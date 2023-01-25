@@ -2,21 +2,19 @@ package com.tandemdiabetes.codecovpoc
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import android.widget.Button
+import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val utility = Utility()
+        val button = findViewById<Button>(R.id.button)
+        val textView = findViewById<TextView>(R.id.textView)
 
-        val addResult = utility.add(12, 34)
-
-        Log.d(TAG, "add result $addResult")
-    }
-
-    companion object {
-        private const val TAG = "MainActivity"
+        button.setOnClickListener {
+            textView.text = "Hello World!"
+        }
     }
 }
