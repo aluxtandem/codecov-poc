@@ -5,6 +5,7 @@
 
 # Used by Codecov
 # Establishes our Codecov rules
+# CodecovPOC is the working repo with CodeCov <-> GitHub
 codecov:
   token: 4b4b2f35-5879-406b-afcb-03c8031b6ef3
 
